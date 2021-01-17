@@ -5,8 +5,13 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import Login from "./components/Login";
-import Panel from "./components/Panel";
+import Home from './components/Home';
+import Dashboard from './components/Dashboard';
+import Menu from './components/Menu';
+import Orders from './components/Orders';
+import Profile from './components/Profile';
+import Status from './components/Status';
+
 
 function App() {
     return (
@@ -37,10 +42,24 @@ function App() {
 
                     <div className="container-fluid">
                         <Switch>
-                            <Route path="/">
-                                Home
+                            <Route path="/dashboard">
+                                <Dashboard />
                             </Route>
-
+                            <Route path="/menu">
+                                <Menu />
+                            </Route>
+                            <Route path="/orders">
+                                <Orders />
+                            </Route>
+                            <Route path="/profile">
+                                <Profile />
+                            </Route>
+                            <Route path="/status">
+                                <Status />
+                            </Route>
+                            <Route path="/">
+                                <Home />
+                            </Route>
                         </Switch>
                     </div>
                 </div>{/*#page-content-wrapper*/}
