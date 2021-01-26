@@ -22,12 +22,10 @@ function App() {
                 <div className="bg-light border-right" id="sidebar-wrapper">
                     <div className="sidebar-heading">OnlineOrd Admin</div>
                     <div className="list-group list-group-flush">
-                        <Link to="/" className="list-group-item list-group-item-action bg-light">Home</Link>
-                        <Link to="/dashboard" className="list-group-item list-group-item-action bg-light">Dashboard</Link>
-                        <Link to="/menu" className="list-group-item list-group-item-action bg-light">Menu</Link>
-                        <Link to="/orders" className="list-group-item list-group-item-action bg-light">Orders</Link>
-                        <Link to="/profile" className="list-group-item list-group-item-action bg-light">Profile</Link>
-                        <Link to="/status" className="list-group-item list-group-item-action bg-light">Status</Link>
+                        <Link to="/" className="list-group-item list-group-item-action bg-light">Головна</Link>
+                        <Link to="/dashboard" className="list-group-item list-group-item-action bg-light">Профіль</Link>
+                        <Link to="/menu" className="list-group-item list-group-item-action bg-light">Список Меню</Link>
+                        <Link to="/orders" className="list-group-item list-group-item-action bg-light">Страви</Link>
                     </div>
                 </div>{/*#sidebar-wrapper*/}
 
