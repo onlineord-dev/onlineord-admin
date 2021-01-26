@@ -6,11 +6,9 @@ import {
     Link
 } from "react-router-dom";
 import Home from './components/Home';
-import Dashboard from './components/Dashboard';
 import Menu from './components/Menu';
-import Orders from './components/Orders';
+import Food from './components/Food';
 import Profile from './components/Profile';
-import Status from './components/Status';
 
 
 function App() {
@@ -23,9 +21,9 @@ function App() {
                     <div className="sidebar-heading">OnlineOrd Admin</div>
                     <div className="list-group list-group-flush">
                         <Link to="/" className="list-group-item list-group-item-action bg-light">Головна</Link>
-                        <Link to="/dashboard" className="list-group-item list-group-item-action bg-light">Профіль</Link>
+                        <Link to="/profile" className="list-group-item list-group-item-action bg-light">Профіль</Link>
                         <Link to="/menu" className="list-group-item list-group-item-action bg-light">Список Меню</Link>
-                        <Link to="/orders" className="list-group-item list-group-item-action bg-light">Страви</Link>
+                        <Link to="/food" className="list-group-item list-group-item-action bg-light">Страви</Link>
                     </div>
                 </div>{/*#sidebar-wrapper*/}
 
@@ -40,20 +38,14 @@ function App() {
 
                     <div className="container-fluid">
                         <Switch>
-                            <Route path="/dashboard">
-                                <Dashboard />
-                            </Route>
                             <Route path="/menu">
                                 <Menu />
                             </Route>
-                            <Route path="/orders">
-                                <Orders />
+                            <Route path="/food">
+                                <Food />
                             </Route>
                             <Route path="/profile">
                                 <Profile />
-                            </Route>
-                            <Route path="/status">
-                                <Status />
                             </Route>
                             <Route path="/">
                                 <Home />
