@@ -12,7 +12,7 @@
 <body>
 <div class="d-flex" id="wrapper">
     {{--Sidebar--}}
-    <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="bg-light border" id="sidebar-wrapper">
         <div class="sidebar-heading">OnlineOrd Admin</div>
         <div class="list-group list-group-flush">
             <a href="/" class="list-group-item list-group-item-action bg-light">Головна</a>
@@ -25,6 +25,11 @@
 
     {{--Page Content--}}
     <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <a href="/" class="btn btn-primary">Sign Out</a>
+            </ul>
+        </nav>
 
         <div class="container-fluid">
             @yield('content')
