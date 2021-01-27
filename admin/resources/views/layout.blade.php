@@ -25,16 +25,13 @@
 
     {{--Page Content--}}
     <div id="page-content-wrapper">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                <a href="/" class="btn btn-primary">Sign Out</a>
-            </ul>
-        </nav>
 
         <div class="container-fluid">
             @yield('content')
         </div>
-    </div>{{--#page-content-wrapper--}}
+        </div>{{--#page-content-wrapper--}}
+    </div>
 </div>{{--#wrapper--}}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </body>
 </html>
