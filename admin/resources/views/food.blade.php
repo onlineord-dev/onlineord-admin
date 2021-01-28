@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-    <h1>Cписок їжі</h1>
+    <h1>Cписок страв</h1>
 @endsection
