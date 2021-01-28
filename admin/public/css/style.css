@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+}
+
+#wrapper {
+    overflow-x: hidden;
+}
+
+#sidebar {
+    min-height: 100vh;
+    margin-left: 0;
+}
+
+#sidebar .sidebar-heading {
+    background-color: #d0d7de;
+    height: 10rem;
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+#sidebar .list-group {
+    width: 13rem;
+}
+
+#sidebar .list-group .current{
+    background-color: #eef1f3 !important;
+}
+#sidebar .list-group .list-group-item:hover{
+    background-color: #e4e8ec !important;
+}
+
+#sidebar .list-group .btn-exit{
+    background-color: #657a8e !important;
+}
+
+#sidebar .list-group .btn-exit:hover{
+    background-color: #d70000 !important;
+}
+
+#page-content {
+    min-width: 0;
+    width: 100%;
+}
