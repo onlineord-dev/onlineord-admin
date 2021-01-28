@@ -7,10 +7,15 @@
 @section('content')
     <h1>Cписок страв</h1>
     <?php
-        if(DB::connection()->getPdo())
-        {
-            echo "Successfully connected to the database => "
-                .DB::connection()->getDatabaseName();
+        try {
+            if(DB::connection()->getPdo())
+            {
+                echo "Successfully connected to the database => "
+                    .DB::connection()->getDatabaseName();
+            }
+        }
+        catch (Exception $e) {
+            echo "Unable to connect";
         }
     ?>
 @endsection
