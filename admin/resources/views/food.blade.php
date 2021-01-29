@@ -5,8 +5,9 @@
 @endsection
 
 @section('content')
-    <h1>Cписок страв</h1>
-    <?php
+    <div class="container text-center">
+        <h1 class="p-5">Cписок страв</h1>
+        <?php
         try {
             if(DB::connection()->getPdo())
             {
@@ -17,5 +18,6 @@
         catch (Exception $e) {
             echo "Unable to connect";
         }
-    ?>
+        ?>
+    </div>
 @endsection

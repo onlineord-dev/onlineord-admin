@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-    <h1>Меню</h1>
+    <h1 class="p-5 text-center">Меню</h1>
 @endsection
