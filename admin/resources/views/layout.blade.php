@@ -33,7 +33,7 @@
 
     {{--Page Content--}}
     <div id="page-content">
-        <div class="container-fluid text-center">
+        <div class="container-fluid align-items-center">
             @yield('content')
         </div>
     </div>
