@@ -21,7 +21,7 @@
         <div class="list-group list-group-flush">
             <a href="/" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/admin') ? 'current': ''}}">Головна</a>
             <a href="/profile" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/profile') ? 'current': ''}}">Профіль</a>
-            <a href="/menu" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/menu') ? 'current': ''}}">Список Меню</a>
+            <a href="/menu" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/menu') ? 'current': ''}}">Меню</a>
             <a href="/food" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/food') ? 'current': ''}}">Страви</a>
         </div>
 
