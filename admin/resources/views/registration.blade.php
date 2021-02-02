@@ -4,10 +4,24 @@
     OnlineOrd Admin
 @endsection
 
-@section('content')
-    <h1 class="p-5 text-center">Реєстрація</h1>
-    <a href="/admin" class="btn btn-primary">Створити акаунт</a>
+@section('header')
+    Реєстрація організації
+@endsection
 
-    <p>Вже маєте зареєстрований акаунт? <a href="/login">Ввійти</a></p>
+@section('fields')
+    <input type="text" id="inputEmail" class="form-control bottom-corners-0" placeholder="Назва організації">
+    <input type="text" id="inputPassword" class="form-control corners-0" placeholder="Адреса">
+    <input type="email" id="inputEmail" class="form-control corners-0" placeholder="Ел. пошта">
+    <input type="text" id="inputEmail" class="form-control top-corners-0 mb-1" placeholder="Номер телефону">
 
+    <input type="password" id="inputPassword" class="form-control bottom-corners-0" placeholder="Пароль">
+    <input type="password" id="inputPassword" class="form-control top-corners-0" placeholder="Підтвердження паролю">
+@endsection
+
+@section('button-label')
+    Зареєструвати
+@endsection
+
+@section('link')
+    Вже маєте акаунт? <a href="/login">Ввійти</a>
 @endsection

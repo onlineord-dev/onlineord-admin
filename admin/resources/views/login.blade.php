@@ -4,9 +4,19 @@
     OnlineOrd Admin
 @endsection
 
-@section('content')
-    <h1 class="p-5 text-center">Вхід</h1>
-    <a href="/admin" class="btn btn-primary">Вхід</a>
-    <p>Не маєте акаунту? <a href="/registration">Створити</a></p>
+@section('header')
+    Вхід
+@endsection
 
+@section('fields')
+    <input type="email" id="inputEmail" class="form-control bottom-corners-0" placeholder="Ел. пошта">
+    <input type="password" id="inputPassword" class="form-control top-corners-0" placeholder="Пароль">
+@endsection
+
+@section('button-label')
+    Ввійти
+@endsection
+
+@section('link')
+    Не маєте акаунту? <a href="/registration">Створити</a>
 @endsection

@@ -1,10 +1,9 @@
+html,
 body {
     margin: 0;
+    height: 100%;
 }
 
-#wrapper {
-    overflow-x: hidden;
-}
 
 #sidebar {
     min-height: 100vh;
@@ -40,4 +39,23 @@ body {
 #page-content {
     min-width: 0;
     width: 100%;
+}
+
+.btn-main {
+    color: white;
+    background-color: #65818e;
+}
+.btn-main:hover {
+    color: white;
+    background-color: #576f7a;
+}
+.bg-main {
+    background-color: #657a8e
+}
+.bg-main:hover {
+    background-color: #57697a
+}
+
+a {
+    text-decoration: none;
 }
