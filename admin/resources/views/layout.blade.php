@@ -33,6 +33,10 @@
 
     {{--Page Content--}}
     <div id="page-content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom px-3">
+            <p class="mb-0"><strong>@yield('header')</strong></p>
+        </nav>
+
         <div class="container-fluid align-items-center">
             @yield('content')
         </div>

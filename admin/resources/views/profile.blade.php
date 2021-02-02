@@ -10,8 +10,11 @@
     Профіль
 @endsection
 
+@section('header')
+    Профіль організації
+@endsection
+
 @section('content')
-    <h1 class="p-5 text-center">Ваш Профіль</h1>
     <div class="container col-md-4" style="font-size:1.4em">
         <div class="row justify-content-between">
             <p class="col-md-6 p-3">Назва Організації: </p>

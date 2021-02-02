@@ -4,9 +4,12 @@
     OnlineOrd Admin
 @endsection
 
+@section('header')
+    Cписок страв
+@endsection
+
 @section('content')
     <div class="container text-center">
-        <h1 class="p-5">Cписок страв</h1>
         <?php
         try {
             if(DB::connection()->getPdo())
