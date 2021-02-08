@@ -4,27 +4,30 @@ body {
     height: 100%;
 }
 
-
 #sidebar {
     min-height: 100vh;
     margin-left: 0;
+    position: fixed;
 }
 
 #sidebar .sidebar-heading {
     background-color: #d0d7de;
-    height: 10rem;
+    height: 170px;
     padding: 0.875rem 1.25rem;
     font-size: 1.2rem;
 }
 
 #sidebar .list-group {
-    width: 13rem;
+    width: 200px;
 }
 
-#sidebar .list-group .current{
+#sidebar .list-group .list-group-item:hover{
     background-color: #eef1f3 !important;
 }
-#sidebar .list-group .list-group-item:hover{
+#sidebar .list-group .current{
+    background-color: #e4e8ec !important;
+}
+#sidebar .list-group .current:hover{
     background-color: #e4e8ec !important;
 }
 
@@ -39,6 +42,19 @@ body {
 #page-content {
     min-width: 0;
     width: 100%;
+    margin-left: 202px;
+}
+#page-content nav {
+    position:fixed;
+    width: 100%;
+    height: 30px;
+}
+
+#main {
+    margin-top: 30px;
+}
+nav {
+    position:fixed;
 }
 
 .btn-main {
