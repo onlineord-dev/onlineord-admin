@@ -20,7 +20,7 @@
                 $users = DB::select('SELECT * FROM users');
                 foreach ($users as $user) {
 //                    dd($user);
-                    echo $user->Name;
+                    echo "<p>".$user->Name."</p>";
                 }
 
             }
