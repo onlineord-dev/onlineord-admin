@@ -9,25 +9,53 @@
 @endsection
 
 @section('content')
-    <div class="container text-center">
         <?php
         try {
             if(DB::connection()->getPdo())
             {
-                echo "<h4>Successfully connected to the database => "
-                    .DB::connection()->getDatabaseName(). "</h4>";
-
-                $users = DB::select('SELECT * FROM users');
-                foreach ($users as $user) {
-//                    dd($user);
-                    echo "<p>".$user->Name."</p>";
-                }
-
+                $foods = DB::select('SELECT * FROM users');
             }
         }
-        catch (Exception $e) {
-            echo "Unable to connect";
+        catch (Exception $e) { ?>
+            <div class="card border-danger m-3 text-white bg-danger">
+                <div class="card-header">
+                    Неможливо підключитись до БД
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Виникла помилка при підключенні до бази даних OnlineOrd Admin.</p>
+                </div>
+            </div>
+        <?php
         }
         ?>
-    </div>
+            <table class="table table-striped table-hover table-bordered mb-0">
+                <thead class="table-secondary">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Submenu</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Weight</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($foods as $food): ?>
+                    <tr>
+{{--                        <th scope="row"><?=$food->ID?></th>--}}
+{{--                        <td><?=$food->Price?></td>--}}
+{{--                        <td><?=$food->Name?></td>--}}
+{{--                        <td><?=$food->Submenu_id?></td>--}}
+{{--                        <td><?=$food->Image?></td>--}}
+{{--                        <td><?=$food->weight?></td>--}}
+                        <th scope="row"><?=$food->ID?></th>
+                        <td><?=$food->Email?></td>
+                        <td><?=$food->Name?></td>
+                        <td><?=$food->Surname?></td>
+                        <td><?=$food->Passwords?></td>
+                        <td><?=$food->Phone_number?></td>
+                    </tr>
+                <?php endforeach ?>
+                </tbody>
+            </table>
 @endsection

@@ -5,9 +5,17 @@
 @endsection
 
 @section('header')
-    Меню
+    Ваші меню
 @endsection
 
 @section('content')
-    <h1 class="p-5 text-center">Меню</h1>
+    <div class="card border-success mt-3">
+        <div class="card-header">
+        </div>
+        <div class="card-body text-success">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
 @endsection

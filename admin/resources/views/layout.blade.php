@@ -37,7 +37,7 @@
             <p class="mb-0"><strong>@yield('header')</strong></p>
         </nav>
 
-        <div class="container-fluid align-items-center" id="main">
+        <div class="container-fluid align-items-center px-0" id="main">
             @yield('content')
         </div>
     </div>
