@@ -13,13 +13,10 @@
 </head>
 <body  class="text-center">
 <main class="form-signin">
-        @yield('fields')
     <form>
         <img class="mb-4" src="img/logo.png" alt="" width="72">
         <h1 class="h3 mb-3 fw-normal">@yield('header')</h1>
-
         @yield('fields')
-
         <a class="w-100 btn btn-lg btn-main mt-3" href="/admin">@yield('button-label')</a>
         <p class="mt-5 mb-3 text-muted">@yield('link')</p>
     </form>
