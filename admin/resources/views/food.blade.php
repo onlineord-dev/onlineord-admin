@@ -13,7 +13,7 @@
         try {
             if(DB::connection()->getPdo())
             {
-                $foods = DB::select('SELECT * FROM users');
+                $foods = DB::select('SELECT * FROM food');
             }
         }
         catch (Exception $e) { ?>
@@ -42,18 +42,18 @@
                 <tbody>
                 <?php foreach ($foods as $food): ?>
                     <tr>
-{{--                        <th scope="row"><?=$food->ID?></th>--}}
-{{--                        <td><?=$food->Price?></td>--}}
-{{--                        <td><?=$food->Name?></td>--}}
-{{--                        <td><?=$food->Submenu_id?></td>--}}
-{{--                        <td><?=$food->Image?></td>--}}
-{{--                        <td><?=$food->weight?></td>--}}
                         <th scope="row"><?=$food->ID?></th>
-                        <td><?=$food->Email?></td>
+                        <td><?=$food->Price?></td>
                         <td><?=$food->Name?></td>
-                        <td><?=$food->Surname?></td>
-                        <td><?=$food->Passwords?></td>
-                        <td><?=$food->Phone_number?></td>
+                        <td><?=$food->Submenu_id?></td>
+                        <td><?=$food->Image?></td>
+                        <td><?=$food->weight?></td>
+{{--                        <th scope="row"><?=$food->ID?></th>--}}
+{{--                        <td><?=$food->Email?></td>--}}
+{{--                        <td><?=$food->Name?></td>--}}
+{{--                        <td><?=$food->Surname?></td>--}}
+{{--                        <td><?=$food->Passwords?></td>--}}
+{{--                        <td><?=$food->Phone_number?></td>--}}
                     </tr>
                 <?php endforeach ?>
                 </tbody>
