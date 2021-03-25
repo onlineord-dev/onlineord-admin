@@ -19,9 +19,9 @@
 
         </div>
         <div class="list-group list-group-flush">
-            <a href="/" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/admin') ? 'current': ''}}">Головна</a>
+            <a href="/admin" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/admin') ? 'current': ''}}">Головна</a>
             <a href="/profile" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/profile') ? 'current': ''}}">Профіль</a>
-            <a href="/menu" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/menu') ? 'current': ''}}">Список Меню</a>
+            <a href="/menu" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/menu') ? 'current': ''}}">Меню</a>
             <a href="/food" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/food') ? 'current': ''}}">Страви</a>
         </div>
 
@@ -33,7 +33,11 @@
 
     {{--Page Content--}}
     <div id="page-content">
-        <div class="container-fluid text-center">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom px-3">
+            <p class="mb-0"><strong>@yield('header')</strong></p>
+        </nav>
+
+        <div class="container-fluid align-items-center px-0" id="main">
             @yield('content')
         </div>
     </div>

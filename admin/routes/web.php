@@ -2,37 +2,53 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\FoodController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegistrationController;
 
-Route::get('/', function () {
-    return redirect('/admin');
+
+
+//Route::get('/', [HomeController::class, 'home']);
+
+//Route::get('/', [LoginController::class, 'login']);
+
+Route::get('/admin', [HomeController::class, 'home']);
+Route::get('/profile', [ProfileController::class, 'profile']);
+Route::get('/menu', [MenuController::class, 'menu']);
+Route::get('/food', [FoodController::class, 'food']);
+Route::get('/login', [LoginController::class, 'login']);
+
+//Route::get('/', [LoginController::class, 'login']);
+//Route::get('/admin', [HomeController::class, 'home']);
+Route::get('/profile', [ProfileController::class, 'profile']);
+Route::get('/menu', [MenuController::class, 'menu']);
+Route::get('/food', [FoodController::class, 'food']);
+//Route::get('/login', [LoginController::class, 'login']);
+Route::get('/registration', [RegistrationController::class, 'registration']);
+
+Route::name('organization.')->group(function(){
+    Route::view('/admin','home')->middleware('auth')->name('home');
+    Route::get('/login',function(){
+        if(Auth::check()){
+            return redirect(route('organization.home'));
+        }
+        return view('login');
+    })->name('login');
+
+    //Route::post('/login',[]);
+    //Route::get('/logout',[])->name('logout');
+
+    Route::get('/registration',function(){
+        if(Auth::check()){
+            return redirect(route('organization.home'));
+        }
+        return view('registration');
+    })->name('registration');
+    Route::post('/registration',[RegistrationController::class,'save']);
 });
 
-Route::get('/admin', function () {
-    return view('home');
-});
+Route::get('/registration', [RegistrationController::class, 'registration']);
 
-Route::get('/profile', function () {
-    return view('profile');
-});
-
-Route::get('/menu', function () {
-    return view('menu');
-});
-
-Route::get('/food', function () {
-    return view('food');
-});
-
-Route::get('/login', function () {
-    return view('login');
-});
