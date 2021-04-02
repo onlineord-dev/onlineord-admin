@@ -19,14 +19,14 @@
 
         </div>
         <div class="list-group list-group-flush">
-            <a href="/admin" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/admin') ? 'current': ''}}">Головна</a>
+            <a href="/home" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/home') ? 'current': ''}}">Головна</a>
             <a href="/profile" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/profile') ? 'current': ''}}">Профіль</a>
             <a href="/menu" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/menu') ? 'current': ''}}">Меню</a>
             <a href="/food" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/food') ? 'current': ''}}">Страви</a>
         </div>
 
         <div class="list-group list-group-flush fixed-bottom">
-            <a href="/" class="list-group-item list-group-item-action btn-exit text-white">Вихід</a>
+            <a href="/logout" class="list-group-item list-group-item-action btn-exit text-white">Вихід</a>
         </div>
 
     </div>

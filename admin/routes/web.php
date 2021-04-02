@@ -12,34 +12,38 @@ use App\Http\Controllers\RegistrationController;
 
 //Route::get('/', [LoginController::class, 'login']);
 //Route::get('/admin', [HomeController::class, 'home']);
-Route::get('/profile', [ProfileController::class, 'profile']);
-Route::get('/menu', [MenuController::class, 'menu']);
-Route::get('/food', [FoodController::class, 'food']);
+Route::get('/profile', [ProfileController::class, 'profile'])->middleware('auth')->name('profile');
+Route::get('/menu', [MenuController::class, 'menu'])->middleware('auth')->name('menu');
+Route::get('/food', [FoodController::class, 'food'])->middleware('auth')->name('food');
 //Route::get('/login', [LoginController::class, 'login']);
-Route::get('/registration', [RegistrationController::class, 'registration']);
+//Route::get('/registration', [RegistrationController::class, 'registration']);
 
 
-Route::view('/admin','home')->middleware('auth')->name('home');
+//Route::view('/admin','home')->middleware('auth')->name('home');
 
-Route::get('/',function(){
-    if(Auth::check()){
-        return redirect(route('home'));
-    }
-    return view('login');
-})->name('login');
+//Route::get('/',function(){
+//    if(Auth::check()){
+//        return redirect(route('home'));
+//    }
+//    return view('login');
+//})->name('login');
 
 Route::post('/',[LoginController::class,'login']);
 
 Route::get('/logout',function(){
     Auth::logout();
-    return redirect('/');
+    return redirect('/login');
 })->name('logout');
 
-Route::get('/registration',function(){
-    if(Auth::check()){
-        return redirect(route('home'));
-    }
-    return view('registration');
-})->name('registration');
+//Route::get('/registration',function(){
+//    if(Auth::check()){
+//        return redirect(route('home'));
+//    }
+//    return view('registration');
+//})->name('registration');
 
-Route::post('/registration',[RegistrationController::class,'save']);
+//Route::post('/registration',[RegistrationController::class,'save']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
