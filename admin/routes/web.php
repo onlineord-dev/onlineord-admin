@@ -28,7 +28,7 @@ Route::get('/food', [FoodController::class, 'food'])->middleware('auth')->name('
 //    return view('login');
 //})->name('login');
 
-Route::post('/',[LoginController::class,'login']);
+//Route::post('/',[LoginController::class,'login']);
 
 Route::get('/logout',function(){
     Auth::logout();
