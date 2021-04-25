@@ -10,7 +10,7 @@
 
 @section('content')
     <div class="container col-md-2" style="font-size:1.4em; margin-top:10%">
-    <form method="POST" action="{{ route('login') }}">
+    <form method="POST" action="">
         @csrf
         <div class="row justify-content-between" style="margin-top:15px">
         <label>Назва страви</label>

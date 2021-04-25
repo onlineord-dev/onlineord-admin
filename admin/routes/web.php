@@ -48,3 +48,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/addFood', [App\Http\Controllers\AddFoodController::class, 'index'])->name('addFood');
+Route::post('/addFood', [\App\Http\Controllers\AddFoodController::class, 'createFood']);
