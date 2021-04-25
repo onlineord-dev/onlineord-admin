@@ -5,7 +5,10 @@
 @endsection
 
 @section('header')
-    Cписок страв
+
+        <div>Список страв</div>
+        <a href="/addFood" style="margin-left:20px;">Додати страву</a>
+
 @endsection
 
 @section('content')
