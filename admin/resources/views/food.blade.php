@@ -40,6 +40,7 @@
                     <th scope="col">Submenu</th>
                     <th scope="col">Image</th>
                     <th scope="col">Weight</th>
+                    <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -51,6 +52,7 @@
                         <td><?=$food->Submenu_id?></td>
                         <td><?=$food->Image?></td>
                         <td><?=$food->weight?></td>
+                        <td style="width:110px;"><a href="{{route('food-delete',$food->ID)}}"><button class="w-100 btn btn-lg mt-3 btn-danger">Видалити</button></a></td>
 {{--                        <th scope="row"><?=$food->ID?></th>--}}
 {{--                        <td><?=$food->Email?></td>--}}
 {{--                        <td><?=$food->Name?></td>--}}

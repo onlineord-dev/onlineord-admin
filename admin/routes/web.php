@@ -14,7 +14,7 @@ use App\Http\Controllers\RegistrationController;
 //Route::get('/admin', [HomeController::class, 'home']);
 Route::get('/profile', [ProfileController::class, 'profile'])->middleware('auth')->name('profile');
 Route::get('/menu', [MenuController::class, 'menu'])->middleware('auth')->name('menu');
-Route::get('/food', [FoodController::class, 'food'])->middleware('auth')->name('food');
+Route::get('/food', [FoodController::class, 'foodIndex'])->middleware('auth')->name('food');
 //Route::get('/login', [LoginController::class, 'login']);
 //Route::get('/registration', [RegistrationController::class, 'registration']);
 
@@ -46,6 +46,8 @@ Route::get('/logout',function(){
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/addFood', [App\Http\Controllers\AddFoodController::class, 'index'])->name('addFood');
-Route::post('/addFood', [\App\Http\Controllers\AddFoodController::class, 'createFood']);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'foodIndex'])->name('home');
+Route::get('/addFood', [App\Http\Controllers\FoodController::class, 'addFoodIndex'])->name('addFood');
+Route::post('/addFood', [\App\Http\Controllers\FoodController::class, 'createFood']);
+
+Route::get('/food/{id}/delete',[\App\Http\Controllers\FoodController::class, 'deleteFood'])->name('food-delete');
