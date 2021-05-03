@@ -75,3 +75,10 @@ nav {
 a {
     text-decoration: none;
 }
+.food-actions-btn-group {
+    display: none;
+}
+
+tr:hover .food-actions-btn-group {
+    display: inline;
+}

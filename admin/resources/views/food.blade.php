@@ -41,7 +41,6 @@
                     <th scope="col">Image</th>
                     <th scope="col">Weight</th>
                     <th scope="col"></th>
-                    <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -53,14 +52,14 @@
                         <td><?=$food->Submenu_id?></td>
                         <td><?=$food->Image?></td>
                         <td><?=$food->weight?></td>
-                        <td style="width:110px"><a href="{{route('food-update',$food->ID)}}"><button class="w-100 btn btn-lg btn-main mt-3">Редагувати</button></a></td>
-                        <td style="width:110px;"><a href="{{route('food-delete',$food->ID)}}"><button class="w-100 btn btn-lg mt-3 btn-danger">Видалити</button></a></td>
-{{--                        <th scope="row"><?=$food->ID?></th>--}}
-{{--                        <td><?=$food->Email?></td>--}}
-{{--                        <td><?=$food->Name?></td>--}}
-{{--                        <td><?=$food->Surname?></td>--}}
-{{--                        <td><?=$food->Passwords?></td>--}}
-{{--                        <td><?=$food->Phone_number?></td>--}}
+                        <td style="width:220px;">
+                            <div class=" food-actions-btn-group">
+                                <div class="btn-group" role="group" aria-label="actions">
+                                    <a href="{{route('food-update',$food->ID)}}" class="btn btn-sm btn-main">Редагувати</a>
+                                    <a href="{{route('food-delete',$food->ID)}}" class="btn btn-sm btn-danger">Видалити</a>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                 <?php endforeach ?>
                 </tbody>
