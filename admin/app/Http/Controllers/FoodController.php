@@ -35,4 +35,10 @@ class FoodController extends Controller
         return redirect()->route('food');
     }
 
+    public function updateFood($id)
+    {
+        $foodToUpdate = DB::table('food')->where('ID', $id)->first();
+        return view('updateFood',['data'=> $foodToUpdate]);
+    }
+
 }

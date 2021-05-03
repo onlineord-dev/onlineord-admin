@@ -46,8 +46,10 @@ Route::get('/logout',function(){
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'foodIndex'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/addFood', [App\Http\Controllers\FoodController::class, 'addFoodIndex'])->name('addFood');
 Route::post('/addFood', [\App\Http\Controllers\FoodController::class, 'createFood']);
 
 Route::get('/food/{id}/delete',[\App\Http\Controllers\FoodController::class, 'deleteFood'])->name('food-delete');
+
+Route::get('/food/{id}/update',[\App\Http\Controllers\FoodController::class, 'updateFood'])->name('food-update');
