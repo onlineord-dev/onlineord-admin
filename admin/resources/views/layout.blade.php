@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
 <div class="d-flex" id="wrapper">
     {{--Sidebar--}}
     <div class="bg-light border" id="sidebar">
         <div class="sidebar-heading text-center">
-            <img class="my-2" src="img/logo.png" alt="" width="72" height="72">
+            <img class="my-2" src="{{ URL::asset('img/logo.png') }}" alt="" width="72" height="72">
             <div class="my-2">OnlineOrd Admin</div>
 
         </div>
