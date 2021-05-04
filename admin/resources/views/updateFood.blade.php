@@ -12,7 +12,7 @@
     <div class="container" style="font-size:1.4em; margin-top:10%">
         <div class="row">
             <div class="col-md-6 col-11 mx-auto">
-                <form method="POST" action="">
+                <form method="POST" action="{{route('food-update-submit', $data->ID)}}">
                     @csrf
                     <div class="row">
                         <div class="col-4">
@@ -46,7 +46,7 @@
                             <label class="col-form-label">Зображення</label>
                         </div>
                         <div class="col">
-                            <input id='img' name="img" value="{{$data->Image}}" placeholder="" class="form-control">
+                            <input id='image' name="image" value="{{$data->Image}}" placeholder="" class="form-control">
                         </div>
                     </div>
                     <div class="row">

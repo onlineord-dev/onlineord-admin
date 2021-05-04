@@ -41,4 +41,16 @@ class FoodController extends Controller
         return view('updateFood',['data'=> $foodToUpdate]);
     }
 
+    public function updateFoodSubmit($id, Request $request)
+    {
+        $foodToUpdate = DB::table('food')->where('ID', $id)->update([
+            'Price' => $request->price,
+            'Name' => $request->name,
+            'Submenu_id' => $request->submenu,
+            'Image' => $request->image,
+            'weight' => $request->weight
+            ]);
+        return redirect()->route('food');
+    }
+
 }

@@ -53,3 +53,4 @@ Route::post('/addFood', [\App\Http\Controllers\FoodController::class, 'createFoo
 Route::get('/food/{id}/delete',[\App\Http\Controllers\FoodController::class, 'deleteFood'])->name('food-delete');
 
 Route::get('/food/{id}/update',[\App\Http\Controllers\FoodController::class, 'updateFood'])->name('food-update');
+Route::post('/food/{id}/update',[\App\Http\Controllers\FoodController::class, 'updateFoodSubmit'])->name('food-update-submit');
