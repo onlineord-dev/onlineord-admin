@@ -82,3 +82,14 @@ a {
 tr:hover .food-actions-btn-group {
     display: inline;
 }
+
+.circle-icon {
+    background: #e4e8ec;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    vertical-align: middle;
+    padding: 10px;
+}
