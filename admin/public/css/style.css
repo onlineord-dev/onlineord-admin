@@ -75,3 +75,21 @@ nav {
 a {
     text-decoration: none;
 }
+.food-actions-btn-group {
+    display: none;
+}
+
+tr:hover .food-actions-btn-group {
+    display: inline;
+}
+
+.circle-icon {
+    background: #e4e8ec;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    vertical-align: middle;
+    padding: 10px;
+}

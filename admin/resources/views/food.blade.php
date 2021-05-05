@@ -5,7 +5,10 @@
 @endsection
 
 @section('header')
-    Cписок страв
+
+        <div>Список страв</div>
+        <a href="/addFood" style="position: absolute; top: 0px; right: 220px;">Додати страву</a>
+
 @endsection
 
 @section('content')
@@ -13,7 +16,12 @@
         try {
             if(DB::connection()->getPdo())
             {
-                $foods = DB::select('SELECT * FROM food');
+                $foods = DB::select('SELECT f.ID, f.Price, f.Name, sm.submenu_name, f.Image, f.weight
+                                    FROM food f
+                                    INNER JOIN sub_menu sm on f.Submenu_id = sm.ID
+                                    INNER JOIN menu m on sm.menu_id = m.ID
+                                    INNER JOIN organization o on m.Organization_id = o.ID
+                                    WHERE o.ID = 439');
             }
         }
         catch (Exception $e) { ?>
@@ -32,28 +40,33 @@
                 <thead class="table-secondary">
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Submenu</th>
-                    <th scope="col">Image</th>
-                    <th scope="col">Weight</th>
+                    <th scope="col">Назва</th>
+                    <th scope="col">Опис</th>
+                    <th scope="col">Ціна</th>
+                    <th scope="col">Категорія</th>
+                    <th scope="col">Зображення</th>
+                    <th scope="col">Вага</th>
+                    <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($foods as $food): ?>
+                <?php foreach ($foods as $food):?>
                     <tr>
                         <th scope="row"><?=$food->ID?></th>
-                        <td><?=$food->Price?></td>
                         <td><?=$food->Name?></td>
-                        <td><?=$food->Submenu_id?></td>
-                        <td><?=$food->Image?></td>
+                        <td></td>
+                        <td><?=$food->Price?></td>
+                        <td><?=$food->submenu_name?></td>
+                        <td style="width:200px;"><?=$food->Image?></td>
                         <td><?=$food->weight?></td>
-{{--                        <th scope="row"><?=$food->ID?></th>--}}
-{{--                        <td><?=$food->Email?></td>--}}
-{{--                        <td><?=$food->Name?></td>--}}
-{{--                        <td><?=$food->Surname?></td>--}}
-{{--                        <td><?=$food->Passwords?></td>--}}
-{{--                        <td><?=$food->Phone_number?></td>--}}
+                        <td style="width:220px;">
+                            <div class=" food-actions-btn-group">
+                                <div class="btn-group" role="group" aria-label="actions">
+                                    <a href="{{route('food-update',$food->ID)}}" class="btn btn-sm btn-main">Редагувати</a>
+                                    <a href="{{route('food-delete',$food->ID)}}" class="btn btn-sm btn-danger">Видалити</a>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                 <?php endforeach ?>
                 </tbody>
