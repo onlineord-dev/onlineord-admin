@@ -7,7 +7,7 @@
 @section('header')
 
         <div>Список страв</div>
-        <a href="/addFood" style="margin-left:20px;">Додати страву</a>
+        <a href="/addFood" style="position: absolute; top: 0px; right: 220px;">Додати страву</a>
 
 @endsection
 
@@ -16,7 +16,12 @@
         try {
             if(DB::connection()->getPdo())
             {
-                $foods = DB::select('SELECT * FROM food');
+                $foods = DB::select('SELECT f.ID, f.Price, f.Name, sm.submenu_name, f.Image, f.weight
+                                    FROM food f
+                                    INNER JOIN sub_menu sm on f.Submenu_id = sm.ID
+                                    INNER JOIN menu m on sm.menu_id = m.ID
+                                    INNER JOIN organization o on m.Organization_id = o.ID
+                                    WHERE o.ID = 439');
             }
         }
         catch (Exception $e) { ?>
@@ -44,12 +49,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($foods as $food): ?>
+                <?php foreach ($foods as $food):?>
                     <tr>
                         <th scope="row"><?=$food->ID?></th>
                         <td><?=$food->Price?></td>
                         <td><?=$food->Name?></td>
-                        <td><?=$food->Submenu_id?></td>
+                        <td><?=$food->submenu_name?></td>
                         <td><?=$food->Image?></td>
                         <td><?=$food->weight?></td>
                         <td style="width:220px;">
