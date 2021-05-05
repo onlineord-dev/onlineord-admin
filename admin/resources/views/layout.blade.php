@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/css/all.css">
     <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -19,10 +20,11 @@
 
         </div>
         <div class="list-group list-group-flush">
-            <a href="/home" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/home') ? 'current': ''}}">Головна</a>
-            <a href="/profile" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/profile') ? 'current': ''}}">Профіль</a>
-            <a href="/menu" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/menu') ? 'current': ''}}">Меню</a>
-            <a href="/food" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/food') ? 'current': ''}}">Страви</a>
+            <a href="/home" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/home') ? 'current': ''}}"><i class="fal fa-home"></i> Головна</a>
+            <a href="/profile" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/profile') ? 'current': ''}}"><i class="fal fa-user"></i> Профіль</a>
+            <a href="/menu" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/menu') ? 'current': ''}}"><i class="fal fa-utensils"></i> Меню</a>
+            <a href="/food" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/food') ? 'current': ''}}"><i class="fal fa-soup"></i> Страви</a>
+            <a href="/table" class="list-group-item list-group-item-action bg-light {{str_contains(url()->current(), '/table') ? 'current': ''}}"><i class="fal fa-qrcode"></i> Столи</a>
         </div>
 
         <div class="list-group list-group-flush fixed-bottom">

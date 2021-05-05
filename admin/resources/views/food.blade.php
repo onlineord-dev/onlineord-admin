@@ -40,11 +40,12 @@
                 <thead class="table-secondary">
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Submenu</th>
-                    <th scope="col">Image</th>
-                    <th scope="col">Weight</th>
+                    <th scope="col">Назва</th>
+                    <th scope="col">Опис</th>
+                    <th scope="col">Ціна</th>
+                    <th scope="col">Категорія</th>
+                    <th scope="col">Зображення</th>
+                    <th scope="col">Вага</th>
                     <th scope="col"></th>
                 </tr>
                 </thead>
@@ -52,10 +53,11 @@
                 <?php foreach ($foods as $food):?>
                     <tr>
                         <th scope="row"><?=$food->ID?></th>
-                        <td><?=$food->Price?></td>
                         <td><?=$food->Name?></td>
+                        <td></td>
+                        <td><?=$food->Price?></td>
                         <td><?=$food->submenu_name?></td>
-                        <td><?=$food->Image?></td>
+                        <td style="width:200px;"><?=$food->Image?></td>
                         <td><?=$food->weight?></td>
                         <td style="width:220px;">
                             <div class=" food-actions-btn-group">
