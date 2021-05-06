@@ -28,7 +28,7 @@
         </div>
 
         <div class="list-group list-group-flush fixed-bottom">
-            <a href="/logout" class="list-group-item list-group-item-action btn-exit text-white">Вихід</a>
+            <a href="/logout" class="list-group-item list-group-item-action btn-exit text-white"><i class="fal fa-door-open"></i> Вихід</a>
         </div>
 
     </div>

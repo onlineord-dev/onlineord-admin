@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-    <h1 class="p-5 text-center display-1">Ласкаво просимо до OnlineOrd Admin</h1>
+    <h1 class="p-5 text-center display-3">Ласкаво просимо до OnlineOrd Admin</h1>
     <div class="row justify-content-center">
         <div class="col-3">
             <div class="card">

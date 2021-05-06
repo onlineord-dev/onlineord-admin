@@ -15,6 +15,7 @@ use App\Http\Controllers\RegistrationController;
 Route::get('/profile', [ProfileController::class, 'profile'])->middleware('auth')->name('profile');
 Route::get('/menu', [MenuController::class, 'menu'])->middleware('auth')->name('menu');
 Route::get('/food', [FoodController::class, 'foodIndex'])->middleware('auth')->name('food');
+Route::get('/table', function(){ return view('table');})->middleware('auth')->name('table');
 //Route::get('/login', [LoginController::class, 'login']);
 //Route::get('/registration', [RegistrationController::class, 'registration']);
 

@@ -16,7 +16,7 @@
         try {
             if(DB::connection()->getPdo())
             {
-                $foods = DB::select('SELECT f.ID, f.Price, f.Name, sm.submenu_name, f.Image, f.weight
+                $foods = DB::select('SELECT f.ID, f.Price, f.Name, f.Description, sm.submenu_name, f.Image, f.weight
                                     FROM food f
                                     INNER JOIN sub_menu sm on f.Submenu_id = sm.ID
                                     INNER JOIN menu m on sm.menu_id = m.ID
@@ -54,7 +54,7 @@
                     <tr>
                         <th scope="row"><?=$food->ID?></th>
                         <td><?=$food->Name?></td>
-                        <td></td>
+                        <td><?=$food->Description?></td>
                         <td><?=$food->Price?></td>
                         <td><?=$food->submenu_name?></td>
                         <td style="width:200px;"><?=$food->Image?></td>
@@ -62,8 +62,8 @@
                         <td style="width:220px;">
                             <div class=" food-actions-btn-group">
                                 <div class="btn-group" role="group" aria-label="actions">
-                                    <a href="{{route('food-update',$food->ID)}}" class="btn btn-sm btn-main">Редагувати</a>
-                                    <a href="{{route('food-delete',$food->ID)}}" class="btn btn-sm btn-danger">Видалити</a>
+                                    <a href="{{route('food-update',$food->ID)}}" class="btn btn-sm btn-main"><i class="fal fa-pencil"></i> Редагувати</a>
+                                    <a href="{{route('food-delete',$food->ID)}}" class="btn btn-sm btn-danger"><i class="fal fa-trash"></i> Видалити</a>
                                 </div>
                             </div>
                         </td>
