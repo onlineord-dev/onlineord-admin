@@ -45,7 +45,7 @@
         <tbody>
         <?php foreach ($tables as $table):
 
-        $response = Http::asForm()->post('http://127.0.0.1:5000/qrcode', [
+        $response = Http::asForm()->post('http://onlineord.herokuapp.com/qrcode', [
             'organization_id' => 439,
             'table_id' => $table->ID,
             'on_table' => true,
