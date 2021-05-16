@@ -55,3 +55,5 @@ Route::get('/food/{id}/delete',[\App\Http\Controllers\FoodController::class, 'de
 
 Route::get('/food/{id}/update',[\App\Http\Controllers\FoodController::class, 'updateFood'])->name('food-update');
 Route::post('/food/{id}/update',[\App\Http\Controllers\FoodController::class, 'updateFoodSubmit'])->name('food-update-submit');
+
+Route::post('/profile', [ProfileController::class, 'update'])->name('profile-update');

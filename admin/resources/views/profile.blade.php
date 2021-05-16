@@ -15,27 +15,33 @@
 @endsection
 
 @section('content')
+    <?php
+            $organization = DB::table('organization')->where('ID', 439)->first()
+    ?>
+    <form method="POST" action="{{route('profile-update')}}">
+        @csrf
     <div class="container col-md-4" style="font-size:1.4em; margin-top:15%">
         <div class="row justify-content-between">
             <p class="col-md-6 p-3">Назва Організації: </p>
-            <div class="col-md-6 p-3"><input type="text" id="orgName" class="form-control" value="Online Order System"></div>
+            <div class="col-md-6 p-3"><input type="text" id="orgName" class="form-control" value="{{$organization->Name}}"></div>
         </div>
         <div class="row justify-content-between">
             <p class="col-md-6 p-3">Адреса: </p>
-            <div class="col-md-6 p-3"><input type="text" id="orgName" class="form-control" value="Львів, вул. Шевченка 246"></div>
+            <div class="col-md-6 p-3"><input type="text" id="orgAddress" class="form-control" value="{{$organization->Address}}"></div>
         </div>
         <div class="row justify-content-between">
             <p class="col-md-6 p-3">Електронна Пошта: </p>
-            <div class="col-md-6 p-3"><input type="text" id="orgName" class="form-control" value="onlineorder@gmail.com"></div>
+            <div class="col-md-6 p-3"><input type="text" id="orgemail" class="form-control" value="{{$organization->email}}"></div>
         </div>
         <div class="row justify-content-between">
             <p class="col-md-6 p-3">Номер телефону: </p>
-            <div class="col-md-6 p-3"><input type="text" id="orgName" class="form-control" value="0987654321"></div>
+            <div class="col-md-6 p-3"><input type="text" id="orgPhone_number" class="form-control" value="{{$organization->Phone_number}}"></div>
         </div>
         <div class="row justify-content-between">
-            <div class="col-md-6 p-3 text-center"><button action="showPassForm()" class="btn bg-dark text-white">Змінити пароль</button></div>
-            <div class="col-md-6 p-3 text-center"><button action="showPassForm()" class="btn bg-dark text-white">Підтвердити зміни</button></div>
+            <div class="col-md-6 p-3 text-center"><button type="submit" class="btn bg-dark text-white">Підтвердити зміни</button></div>
         </div>
+    </div>
+    </form>
         <!--
                 <div id="passChange" name="passChange" class="p-3" style="font-size:0.8em">
                     <label class="mt-3">Введіть старий пароль</label><br />
@@ -47,5 +53,5 @@
                     <input class="mt-3 btn btn-dark"type="button" name="submitChange" id="submitChange" value="Змінити" />
                 </div>
         -->
-    </div>
+
 @endsection
