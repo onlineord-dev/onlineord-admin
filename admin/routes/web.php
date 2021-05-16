@@ -12,7 +12,7 @@ use App\Http\Controllers\RegistrationController;
 
 //Route::get('/', [LoginController::class, 'login']);
 //Route::get('/admin', [HomeController::class, 'home']);
-Route::get('/profile', [ProfileController::class, 'profile'])->middleware('auth')->name('profile');
+
 Route::get('/menu', [MenuController::class, 'menu'])->middleware('auth')->name('menu');
 Route::get('/food', [FoodController::class, 'foodIndex'])->middleware('auth')->name('food');
 Route::get('/table', function(){ return view('table');})->middleware('auth')->name('table');
@@ -56,4 +56,9 @@ Route::get('/food/{id}/delete',[\App\Http\Controllers\FoodController::class, 'de
 Route::get('/food/{id}/update',[\App\Http\Controllers\FoodController::class, 'updateFood'])->name('food-update');
 Route::post('/food/{id}/update',[\App\Http\Controllers\FoodController::class, 'updateFoodSubmit'])->name('food-update-submit');
 
+Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
 Route::post('/profile', [ProfileController::class, 'update'])->name('profile-update');
+
+Route::get('/addSubmenu', [App\Http\Controllers\SubmenuController::class, 'addSubmenuIndex'])->name('addSubmenu');
+Route::post('/addSubmenu', [\App\Http\Controllers\SubmenuController::class, 'createSubmenu']);
+

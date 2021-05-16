@@ -44,7 +44,7 @@
                     <a href="#" class="btn btn-main float-end"><i class="fal fa-pencil"></i> Редагувати меню</a>
                 </div>
             </div>
-            <a href="#" class="btn btn-secondary"><i class="fal fa-plus"></i> Додати підменю</a>
+            <a href="/addSubmenu" class="btn btn-secondary"><i class="fal fa-plus"></i> Додати підменю</a>
 
             <div class="accordion my-3" id="submenusAccordion">
                 <?php
