@@ -59,7 +59,7 @@
                         <div id="c{{$menu->ID.$submenu->ID}}" class="accordion-collapse collapse" aria-labelledby="h{{$menu->ID.$submenu->ID}}" data-bs-parent="#submenusAccordion">
                             <div class="accordion-body p-0">
                                 <?php
-                                $foods = DB::select('SELECT f.ID, f.Price, f.Name, sm.submenu_name, f.Image, f.weight
+                                $foods = DB::select('SELECT f.ID, f.Price, f.Name, f.Description, sm.submenu_name, f.Image, f.weight
                                     FROM food f
                                     INNER JOIN sub_menu sm on f.Submenu_id = sm.ID
                                     INNER JOIN menu m on sm.menu_id = m.ID
@@ -83,7 +83,7 @@
                                     <tr>
                                         <th scope="row"><?=$food->ID?></th>
                                         <td><?=$food->Name?></td>
-                                        <td></td>
+                                        <td><?=$food->Description?></td>
                                         <td><?=$food->Price?></td>
                                         <td style="width:200px;"><?=$food->Image?></td>
                                         <td><?=$food->weight?></td>
