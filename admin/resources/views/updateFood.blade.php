@@ -54,8 +54,17 @@
                             <label class="col-form-label">Підменю</label>
                         </div>
                         <div class="col">
-                            <input id='submenu' name="submenu" value="{{$data->Submenu_id}}" placeholder=""
-                                   class="form-control">
+                            <select name="submenu" id="submenu" class="form-control">
+                                <?php
+                                $submenus = DB::select('SELECT sm.ID, sm.submenu_name FROM sub_menu sm
+                                INNER JOIN menu m
+                                ON sm.menu_id = m.ID
+                                INNER JOIN organization o on m.Organization_id = o.ID
+                                WHERE o.ID = 439');
+                                foreach ($submenus as $submenu):?>
+                                <option value="<?php echo $submenu->ID ?>"><?= $submenu->submenu_name?></option>
+                                <?php endforeach ?>
+                            </select>
                         </div>
                     </div>
                     <div class="text-end">
