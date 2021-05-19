@@ -34,7 +34,17 @@
 
         <div class="row justify-content-between" style="margin-top:15px">
         <label>Підменю</label>
-        <input id='submenu' name="submenu" placeholder="">
+        <select name="submenu" id="submenu">
+        <?php
+        $submenus = DB::select('SELECT sm.ID, sm.submenu_name FROM sub_menu sm
+                                INNER JOIN menu m
+                                ON sm.menu_id = m.ID
+                                INNER JOIN organization o on m.Organization_id = o.ID
+                                WHERE o.ID = 439');
+        foreach ($submenus as $submenu):?>
+            <option value="<?php echo $submenu->ID ?>"><?= $submenu->submenu_name?></option>
+        <?php endforeach ?>
+        </select>
         </div>
         <button type="submit" class="w-100 btn btn-lg btn-main mt-3">Створити</button>
     </form>
